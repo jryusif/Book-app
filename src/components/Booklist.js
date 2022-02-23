@@ -1,5 +1,6 @@
 import React, {  useContext } from 'react';
 import { Authcontext } from '../contexts/Authcontext';
+import {BookContext} from "../contexts/Bookcontext"
 import { ThemeContext } from '../contexts/ThemeContext';
 
 
@@ -7,14 +8,20 @@ import { ThemeContext } from '../contexts/ThemeContext';
 
 
 const BookList = () => {
-    const  {lightTheme, light, dark} = useContext(ThemeContext);
+        const  {lightTheme, light, dark} = useContext(ThemeContext);
         const theme = lightTheme ? light:dark;
+        const {books} = useContext(BookContext);
     return ( 
         <div style={{background:theme.bg, color:theme.color }} className='book-list'> 
         <ul>
-            <li style={{background:theme.ui}}>Atomic Habits</li>
-            <li style={{background:theme.ui}}>The way of the wind</li>
-            <li style={{background:theme.ui}}> The final empire</li>
+          {books.map(book =>{
+              return (
+                  <li style={{background:theme.ui}} key={book.id}>
+                      {book.title}
+                  </li>
+              )
+          })}
+       
         </ul>
     </div>  
      );

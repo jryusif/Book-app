@@ -5,16 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #585258;
 }
 
 /* app styles */
 .App {
-  max-width: 400px;
-  margin: 30px auto;
-  text-align: center;
+  background: #383838;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 700px;
+  color: #eee;
 }
-nav {
-  padding: 5px;
+.navbar {
+  padding: 10px 20px;
+  text-align: center;
+  background: #6d3d6d;
+}
+.navbar h1 {
+  margin: 10px 0;
 }
 nav ul {
   padding: 0;
@@ -25,8 +33,8 @@ nav ul li {
 }
 .book-list {
   padding: 20px;
-  margin-bottom: 20px;
 }
+
 .book-list ul {
   padding: 0;
   list-style-type: none;
@@ -35,4 +43,76 @@ nav ul li {
   padding: 10px;
   margin: 10px auto;
   border-radius: 10px;
+}
+.book-list li:hover {
+  cursor: pointer;
+}
+.book-list .title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.book-list .author {
+  font-size: 0.9em;
+}
+.empty {
+  margin: 20px;
+  text-align: center;
+}
+
+/* theme button animation */
+
+.theme-button {
+  border-radius: 4px;
+  background-color: #555;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 10px;
+  padding: 20px;
+  width: auto;
+  cursor: pointer;
+  margin: 5px;
+}
+.theme-button:hover {
+  opacity: 0.5;
+}
+.remove-button {
+  background-color: #5b5853;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+  width: auto;
+  cursor: pointer;
+  margin: 5px;
+}
+.remove-button:hover {
+  opacity: 0.7;
+}
+form {
+  padding: 20px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 6px 0;
+  border: 0;
+}
+
+input[type="submit"] {
+  background-color: #797671;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 20px;
+  width: auto;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  border: 0;
 }

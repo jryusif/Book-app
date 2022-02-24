@@ -6,8 +6,8 @@ export const ThemeContext = createContext();
 class ThemeContextProvider extends Component {
     state = {  
         lightTheme: true, 
-        light:{ color:"#555", ui:"#ddd", bg: "#eee" },
-        dark:{ color:"#ddd", ui:"#333", bg: "#555" }
+        light:{ color:"#555", ui:"#ddd", bg: "#eee", inbg:"555"},
+        dark:{ color:"#ddd", ui:"#333", bg: "#555", inbg:"eee"}
         
     } 
     toggleTheme = ( ) => {

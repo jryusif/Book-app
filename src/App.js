@@ -1,25 +1,40 @@
 import BookList from "./components/BookList"
 import Navbar from "./components/Navbar";
 import ThemeToggle from "./components/ThemeToggle";
-import AuthContextProvider from "./contexts/Authcontext";
+
 import BookContextProvider from "./contexts/Bookcontext";
 import ThemeContextProvider from "./contexts/ThemeContext";
 import NewBookForm from "./components/BookForm"
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+
 
 function App() {
   return (
     <div className="App">
-      <ThemeContextProvider>
-        <AuthContextProvider>
-         
-          <BookContextProvider>
-            <Navbar/> 
-            <BookList/>
-            <NewBookForm/>
-          </BookContextProvider>
-          <ThemeToggle/>
-        </AuthContextProvider>
-      </ThemeContextProvider>
+      <Router>
+        <ThemeContextProvider>
+        <ThemeToggle/>
+        <BookContextProvider>
+            <Navbar/>
+
+         <Switch>
+            <Route exact path = "/">
+            
+              <Home/>
+            
+
+            </Route>
+            
+        
+
+            </Switch>
+            </BookContextProvider>
+            
+        </ThemeContextProvider>
+      </Router>
+      
      
     </div>
   );

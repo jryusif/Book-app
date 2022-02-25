@@ -6,13 +6,13 @@ const NewBookForm = () => {
     const {lightTheme, light, dark} = useContext(ThemeContext);
     const theme = lightTheme? light : dark;
 
-    const {dispatch} = useContext(BookContext);
+    const {addBooks} = useContext(BookContext);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
 
     const handleSubmit = (e)=> {
         e.preventDefault();
-        dispatch({type:'ADD_BOOK',book: {title, author}});
+        addBooks(title, author);
         setAuthor('');
         setTitle('');
     };
